@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild, Input} from "@angular/core";
 import {HeatmapLayer} from "@ngui/map";
 import {Observable, Subject} from "rxjs";
 import {NewsSentimentService} from "./news.sentiment.service";
+import {Data} from './data';
 import WeightedLocation = google.maps.visualization.WeightedLocation;
 
 @Component({
@@ -45,7 +46,8 @@ export class HeatmapComponent implements OnInit {
     }
 
     dataToPoints(): Observable<WeightedLocation> {
-        return this.sentiment.fetchContentSentiment(this.itemId).flatMap(item => {
+        // this.sentiment.fetchContentSentiment(this.itemId)
+        return Observable.from(Data).flatMap(item => {
             if (item.location.geo !== "") {
                 let components = item.location.geo.split(" ");
                 let location = new google.maps.LatLng(parseFloat(components[0]), parseFloat(components[1]));
