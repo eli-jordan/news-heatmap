@@ -12,3 +12,14 @@
 * Angular 2 &mdash; https://angular.io/
 * Angular 2 component for google maps &mdash; https://www.npmjs.com/package/@ngui/map
 * Google maps heatmap support &mdash; https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap
+
+### Setup
+
+```bash
+get clone git@github.com:eli-jordan/wch-hackathon-geotaging.git
+cd wch-hackathon-geotaging
+npm install
+npm start
+```
+
+Open http://locahost:4200 in your browser
